@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Bizning filiallar — EVOS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .logo-text {
+            color: #00a046;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .btn-green-cart {
+            background-color: #00a046;
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+        }
+        .city-btn {
+            border-radius: 20px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border: none;
+        }
+        .city-btn.active {
+            background-color: #00a046;
+            color: white;
+        }
+        .city-btn:not(.active) {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+        .branch-card {
+            border-radius: 15px;
+            border: 1px solid #eaeaea;
+            transition: 0.2s;
+        }
+        .branch-card:hover {
+            border-color: #00a046;
+            background-color: #fcfcfc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Asosiy Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="logo-text" href="/">EVOS</a>
+            <div class="d-flex align-items-center gap-3">
+                <a href="/" class="btn btn-outline-success px-4 py-2 rounded-3 fw-semibold text-decoration-none">Bosh sahifa</a>
+                <button class="btn btn-green-cart px-4 py-2">🛒 Savat</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Kontent qismi -->
+    <div class="container my-5">
+        <h2 class="fw-bold mb-2">Bizning filiallar</h2>
+        <p class="text-muted mb-4">O'zbekiston bo'ylab 80 dan ortiq EVOS filiali[cite: 13]</p>
+
+        <!-- Shaharlar filtri -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+            <button class="city-btn active">Barcha shaharlar</button>
+            <button class="city-btn">Toshkent</button>
+            <button class="city-btn">Samarqand</button>
+            <button class="city-btn">Farg'ona</button>
+            <button class="city-btn">Yangiyo'l</button>
+            <button class="city-btn">Qarshi</button>
+            <button class="city-btn">Buxoro</button>
+            <button class="city-btn">Urganch</button>
+        </div>
+
+        <div class="row g-4">
+            <!-- Chap tomon: Filiallar ro'yxati va qidiruv -->
+            <div class="col-md-5">
+                <div class="mb-3">
+                    <input type="text" class="form-control py-3 rounded-4 border-0 shadow-sm" placeholder="Shahar, manzil yoki joyni kiriting[cite: 13]">
+                </div>
+
+                <div class="d-flex flex-column gap-3" style="max-height: 550px; overflow-y: auto;">
+                    
+                    <!-- Filial item 1 -->
+                    <div class="card branch-card p-3 shadow-sm">
+                        <h5 class="fw-bold mb-1">024-Боровского</h5>
+                        <p class="text-muted small mb-2">г. Ташкент, Мирабадский район, ул. Яхъё Гулямова[cite: 13].</p>
+                        <div class="text-success fw-semibold small">08:00 - 03:00 • 1 km[cite: 13]</div>
+                    </div>
+
+                    <!-- Filial item 2 -->
+                    <div class="card branch-card p-3 shadow-sm">
+                        <h5 class="fw-bold mb-1">011-Алайский</h5>
+                        <p class="text-muted small mb-2">г. Ташкент, Юнусабадский район, ул. Амира Темура[cite: 13].</p>
+                        <div class="text-success fw-semibold small">08:00 - 03:00 • 1 km[cite: 13]</div>
+                    </div>
+
+                    <!-- Filial item 3 -->
+                    <div class="card branch-card p-3 shadow-sm">
+                        <h5 class="fw-bold mb-1">017-Бешкайрагач</h5>
+                        <p class="text-muted small mb-2">г. Ташкент, Учтепинский район, массиви Бешкайрагач.</p>
+                        <div class="text-success fw-semibold small">08:00 - 03:00 • 2 km</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- O'ng tomon: Xarita (Map) -->
+            <div class="col-md-7

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>EVOS — Toshkent bo'ylab taom yetkazib berish</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        /* Yuqori kichik menyu */
+        .top-bar {
+            font-size: 13px;
+            color: #6c757d;
+        }
+        /* Asosiy navigatsiya */
+        .navbar-evos {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .logo-text {
+            color: #00a046;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .btn-green-cart {
+            background-color: #00a046;
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+        }
+        .btn-green-cart:hover {
+            background-color: #00893d;
+            color: white;
+        }
+        /* Bannerlar */
+        .banner-card {
+            border-radius: 20px;
+            overflow: hidden;
+            border: none;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .banner-card:hover {
+            transform: translateY(-5px);
+        }
+        /* Chap tarafdagi kategoriya tugmalari */
+        .category-btn {
+            background: #ffffff;
+            border: none;
+            border-radius: 15px;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #212529;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            transition: 0.2s;
+        }
+        .category-btn:hover, .category-btn.active {
+            background-color: #00a046;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Yuqori yordamchi qator -->
+    <div class="top-bar py-2 border-bottom bg-white d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <a href="{% url 'filiallar_sahifasi' %}" class="text-decoration-none text-muted">Filiallar</a>
+                <a href="{% url 'vakansiyalar_sahifasi' %}" class="text-decoration-none text-muted">Vakansiyalar</a>
+                <a href="{% url 'biz_haqimizda_sahifasi' %}" class="text-decoration-none text-muted">Biz haqimizda</a>
+                <a href="{% url 'bolalarga_sahifasi' %}" class="text-decoration-none text-success fw-bold">Bolalarga</a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span class="fw-bold text-dark">+998 71 203 12 12</span>
+                <span class="badge bg-light text-dark border">O'zbek tili ▾</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Asosiy Header (Navigatsiya) -->
+    <nav class="navbar navbar-evos sticky-top py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="logo-text" href="/">EVOS</a>
+            
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-green-cart px-4 py-2 d-flex align-items-center gap-2">
+                    🛒 Savat
+                </button>
+                <button class="btn btn-light border px-3 py-2 rounded-3 fw-semibold">
+                    👤 Kirish
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. Asosiy qism -->
+    <div class="container my-4">
+        
+        <!-- Bannerlar bloki (Admin paneldan boshqariladi) -->
+        <div class="row g-3 mb-5">
+            {% for banner in bannerlar %}
+            <div class="col-md-2 col-4">
+                <div class="card banner-card border-0 shadow-sm overflow-hidden h-100">
+                    <img src="{{ banner.rasm_url }}" class="w-100" style="height: 190px; object-fit: cover;" alt="{{ banner.nomi }}">
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-light text-center border text-muted rounded-4 py-3">
+                    Hozircha bannerlar yo'q. Admin paneldan qo'shishingiz mumkin!
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Menyu va Taomlar -->
+        <div class="row">
+            <!-- Chap kategoriya menyusi -->
+            <div class="col-md-3 mb-4">
+                <div class="d-flex flex-column gap-2">
+                    <button class="category-btn active">🌯 Chizzi Chizz</button>
+                    <button class="category-btn">🔥 Aksiyalar</button>
+                    <button class="category-btn">✨ Novinki (Yangi)</button>
+                    <button class="category-btn">🥙 Lavashlar</button>
+                    <button class="category-btn">🍔 Burgerlar</button>
+                    <button class="category-btn">🥤 Ichimliklar</button>
+                </div>
+            </div>
+
+            <!-- O'ng qism: Taomlar -->
+            <div class="col-md-9">
+                <h3 class="fw-bold mb-4">Chizzi Chizz</h3>
+                
+                <div class="row g-4">
+                    {% for taom in taomlar %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card h-100 shadow-sm border-0 rounded-4 p-2">
+                            <img src="{{ taom.rasm_url }}" class="card-img-top" alt="Taom" style="height: 180px; object-fit: contain;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">{{ taom.nomi }}</h5>
+                                <p class="card-text text-muted small">{{ taom.tavsifi }}</p>
+                                <div class="mt-auto">
+                                    <p class="fw-bold fs-5 text-success mb-2">{{ taom.narxi }} so'm</p>
+                                    <button class="btn btn-green-cart w-100 py-2">Savatga</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="col-12">
+                        <div class="alert alert-warning text-center rounded-4 py-4">
+                            Hozircha bu kategoriyada taomlar yo'q. Admin paneldan qo'shishingiz mumkin!
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

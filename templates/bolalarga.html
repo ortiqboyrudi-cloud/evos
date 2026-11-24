@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>EVOS Kids — Bolalarga</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .logo-text {
+            color: #00a046;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .btn-green-cart {
+            background-color: #00a046;
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+        }
+        .btn-green-cart:hover {
+            background-color: #00893d;
+            color: white;
+        }
+        /* EVOS Kids Hero Banner */
+        .kids-hero {
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 40px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+        .kids-badge {
+            background-color: #4cc9f0;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .evos-kids-logo {
+            background-color: #2ecc71;
+            border-radius: 25px;
+            padding: 30px 40px;
+            text-align: center;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.25);
+        }
+        .evos-kids-logo h1 {
+            color: white;
+            font-weight: 900;
+            font-size: 46px;
+            margin-bottom: 0;
+            letter-spacing: -1px;
+        }
+        .evos-kids-logo span {
+            background-color: #38b6ff;
+            color: #ffe600;
+            font-weight: 900;
+            font-size: 28px;
+            padding: 2px 18px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        /* Pastki 3 ta kartochka */
+        .kids-card {
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .kids-card:hover {
+            transform: translateY(-5px);
+        }
+        .holiday-banner {
+            background-color: #2ecc71;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .holiday-star {
+            background-color: #ffe600;
+            color: #e63946;
+            font-weight: 900;
+            font-size: 26px;
+            padding: 35px 25px;
+            border-radius: 30px;
+            transform: rotate(-5deg);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Asosiy Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="logo-text" href="/">EVOS</a>
+            <div class="d-flex align-items-center gap-3">
+                <a href="/" class="btn btn-outline-success px-4 py-2 rounded-3 fw-semibold text-decoration-none">Bosh sahifa</a>
+                <button class="btn btn-green-cart px-4 py-2">🛒 Savat</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Kontent qismi -->
+    <div class="container my-5">
+        
+        <!-- Yuqori Katta Banner (EVOS Kids) -->
+        <div class="kids-hero mb-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <span class="kids-badge mb-3">EVOS KIDS</span>
+                    <h1 class="fw-bold mb-3" style="font-size: 34px; line-height: 1.3;">
+                        EVOS Kids — EVOS restoranlar tarmog'idagi bolalar uchun qulaylik va quvonch yaratuvchi yo'nalish
+                    </h1>
+                    <p class="text-muted mb-3" style="font-size: 16px; line-height: 1.6;">
+                        Bizda xavfsiz bolalar maydonchalari, bayramlar uchun sharoit va akvagrim bor — har bir tashrif bolalar uchun yorqin va qiziqarli bo'lishi uchun.
+                    </p>
+                    <p class="fw-bold fst-italic text-dark mb-0">
+                        Biz oilaviy dam olishni qulay va quvnoq qilamiz!
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="evos-kids-logo">
+                        <h1>EVOS</h1>
+                        <span>kids</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastki 3 ta yo'nalish kartochkalari -->
+        <div class="row g-4">
+            <!-- 1-kartochka: Bayramlar -->
+            <div class="col-md-4">
+                <div class="kids-card">
+                    <div class="holiday-banner">
+                        <div class="holiday-star">Bayramlar</div>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="fw-bold mb-2">Quvnoq bayramlar</h5>
+                        <p class="text-muted small mb-0">Tug'ilgan kun va maxsus tadbirlarni EVOS bilan unutilmas tarzda nishonlang.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2-kartochka: O'yin maydonchalari -->
+            <div class="col-md-4">
+                <div class="kids-card">
+                    <img src="https://files.evos.uz/banner/images/Uz/UZ_desktop_1733221973656.webp" class="w-100" style="height: 240px; object-fit: cover;" alt="O'yin maydonchalari">
+                    <div class="p-4">
+                        <h5 class="fw-bold mb-2">Xavfsiz maydonchalar</h5>
+                        <p class="text-muted small mb-0">Bolajonlar miriqib o'ynashlari uchun barcha qulayliklarga ega maxsus hududlar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-kartochka: Akvagrim -->
+            <div class="col-md-4">
+                <div class="kids-card">
+                    <img src="https://files.evos.uz/banner/images/Uz/UZ_desktop_1739521360098.webp" class="w-100" style="height: 240px; object-fit: cover;" alt="Akvagrim">
+                    <div class="p-4">
+                        <h5 class="fw-bold mb-2">Yorqin akvagrim</h5>
+                        <p class="text-muted small mb-0">Dam olish kunlari bolalar uchun qiziqarli obrazlar va rang-barang chizmalar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
